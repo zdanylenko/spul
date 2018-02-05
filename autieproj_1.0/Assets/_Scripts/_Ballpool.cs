@@ -9,7 +9,8 @@ public class _Ballpool : MonoBehaviour {
 
     private List<GameObject> allballs = new List<GameObject>(); public List<GameObject> albal { get { return (allballs); } set { allballs = value; } }
 
-    private int maxballs = 0; public int mxbl
+    
+    private int maxballs = 5; public int mxbl
     {
         get { return (maxballs); }
         set
@@ -61,8 +62,8 @@ public class _Ballpool : MonoBehaviour {
         if (activa() != null)
         {
             GameObject boi = activa();
-            activa().SetActive(true);
-            activa().GetComponent<_Boll>().col = cel;
+            boi.SetActive(true);
+            boi.GetComponent<_Boll>().col = cel;
         }
     }
 
@@ -75,6 +76,9 @@ public class _Ballpool : MonoBehaviour {
 	}
 	
 	void Update () {
-		
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            makestuff(Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
+        }
 	}
 }
