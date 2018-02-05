@@ -39,7 +39,7 @@ public class _Ballpool : MonoBehaviour {
         int sevseter = 0;
         for( int i = 0; i < maxballs; i++)
         {
-            if (allballs[i].activeSelf)
+            if (allballs[i].activeSelf != true)
             {
                 sevseter = i;
                 foundting = true;
@@ -56,11 +56,13 @@ public class _Ballpool : MonoBehaviour {
         }
     }
 
-    public void makestuff()
+    public void makestuff(Color cel)
     {
-        if ()
+        if (activa() != null)
         {
-
+            GameObject boi = activa();
+            activa().SetActive(true);
+            activa().GetComponent<_Boll>().col = cel;
         }
     }
 
